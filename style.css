@@ -40,10 +40,10 @@ p{
 
 #ChaiSmall,#ChaiLarge,#ChaiSpecial{
 
-    background-image: url(/werewrer.jpg);
+    background-image: url(werewrer.jpg);
 }
 #CoffeeSmall,#Coffeelarge,#CoffeeSpecial{
-    background-image: url(/coffee.jpg);
+    background-image: url(coffee.jpg);
 }
 h2{
     font-family: monospace;
