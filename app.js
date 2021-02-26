@@ -1,89 +1,248 @@
 
-var chaiSmallSold=0;
-var chaiSmall= 0; 
-document.getElementById("ChaiSmall").addEventListener("click",function(){
-    
-    chaiSmall = chaiSmall + 40;
-    chaiSmallSold++;
-    document.getElementById("tchaism").innerText = chaiSmallSold;
-    revenue();
-    
-    });
-var chaiLargeSold=0;
-var chaiLarge = 0;
-document.getElementById("ChaiLarge").addEventListener("click",function(){
-    chaiLarge = chaiLarge + 60;
-    chaiLargeSold++;
-    document.getElementById("tchailg").innerText = chaiLargeSold;
-    revenue();
-    
-    
-});
 
-var chaiSpecialSold=0;
-var chaiSpecial =0;
-document.getElementById("ChaiSpecial").addEventListener("click",function(){
-    chaiSpecial = chaiSpecial + 80;
-    chaiSpecialSold++;
-    document.getElementById("tchaisp").innerText = chaiSpecialSold;
-    revenue();
-    
-});
-var coffeeSmallSold=0;
-var coffeeSmall =0;
-document.getElementById("CoffeeSmall").addEventListener("click",function(){
-    coffeeSmall = coffeeSmall + 50;
-    coffeeSmallSold++;
-    document.getElementById("tcoffs").innerText = coffeeSmallSold;
-    revenue();
-    
-});
-var coffeeLargeSold=0;
-var coffeelarge =0;
-document.getElementById("Coffeelarge").addEventListener("click",function(){
-    coffeelarge = coffeelarge + 80;
-    coffeeLargeSold++;
-    document.getElementById("tcofflg").innerText = coffeeLargeSold;
-    revenue();
-    
-});
+
+var chaiSmall=0;
+chaiSmall= localStorage.chaismalllocal;
+var chaiLarge=0;
+chaiLarge= localStorage.chailargelocal;
+var chaiSpecial=0;
+chaiSpecial= localStorage.chaispeciallocal;
+var coffeeSmall=0;
+coffeeSmall= localStorage.coffeesmalllocal;
+var coffeeLarge=0;
+coffeeLarge= localStorage.coffeelargelocal;
 var coffeeSpecial=0;
-var coffeeSpecialSold=0; 
-document.getElementById("CoffeeSpecial").addEventListener("click",function(){
-    coffeeSpecial = coffeeSpecial + 100;
-    coffeeSpecialSold++;
-    document.getElementById("tcoffsp").innerText = coffeeSpecialSold;
-    revenue();
-    
-}); 
+coffeeSpecial= localStorage.coffeespeciallocal;
 
 var totalRevenue=0;
+var int;
+int = localStorage.totalRev;
+totalRevenue = parseInt(int);
 
-function revenue(){
-totalRevenue = chaiSmall+chaiLarge+chaiSpecial+coffeeSmall+coffeelarge+coffeeSpecial;
-localStorage.setItem("localRev", totalRevenue);
-document.getElementById("trgen").innerText = localStorage.localRev;
+
+
+// Chai Small
+document.getElementById("chaismall").addEventListener("click",function(){
+   chaiSmall++;
+   localStorage.setItem("chaismalllocal",chaiSmall);
+   document.getElementById("tchaiss").innerText = localStorage.chaismalllocal;
+
+   var a = document.getElementById("tchaiss").innerText;
+   if ( a === "NaN" ){
+       document.getElementById("tchaiss").innerText ="Error";
+       alert("reset again and continue without realoding page");
+    }
+
+    totalRevenue= totalRevenue + 40;
+    localStorage.setItem("totalRev",totalRevenue);
+    document.getElementById("tre").innerText = localStorage.totalRev;
+
+
+});
+
+
+
+document.getElementById("tchaiss").innerText = localStorage.chaismalllocal;
+document.getElementById("tre").innerText = localStorage.totalRev;
+
+if(localStorage.chaismalllocal === undefined){
+document.getElementById("tchaiss").innerText = 0;
 }
-
-document.getElementById("trgen").innerText = localStorage.localRev;
-
+// chai small end
 
 
-function reset(){
-    localStorage.localRev=0;
-    totalRevenue = 0;
-    document.getElementById("trgen").innerText = totalRevenue;
-    chaiSmallSold=0;
-    chaiLargeSold=0;
-    chaiSpecialSold=0;
-    coffeeSmallSold=0;
-    coffeeLargeSold=0;
-    coffeeSpecialSold=0; 
-    document.getElementById("tchaism").innerText = "";
-    document.getElementById("tchailg").innerText = "";
-    document.getElementById("tchaisp").innerText = "";
-    document.getElementById("tcoffs").innerText = "";
-    document.getElementById("tcofflg").innerText = "";
-    document.getElementById("tcoffsp").innerText = "";
-}
+//chai large
 
+document.getElementById("chailarge").addEventListener("click",function(){
+    chaiLarge++;
+    localStorage.setItem("chailargelocal",chaiLarge);
+    document.getElementById("tchails").innerText = localStorage.chailargelocal;
+ 
+    var a = document.getElementById("tchails").innerText;
+    if ( a === "NaN" ){
+        document.getElementById("tchails").innerText ="Error";
+        alert("reset again and continue without realoding page");
+     }
+ 
+     totalRevenue= totalRevenue + 50;
+     localStorage.setItem("totalRev",totalRevenue);
+     document.getElementById("tre").innerText = localStorage.totalRev;
+ 
+ 
+ });
+ 
+ 
+ 
+ document.getElementById("tchails").innerText = localStorage.chailargelocal;
+ document.getElementById("tre").innerText = localStorage.totalRev;
+ 
+ if(localStorage.chailargelocal === undefined){
+ document.getElementById("tchails").innerText = 0;
+ }
+//chai large end
+
+
+//chai special 
+document.getElementById("chaispecial").addEventListener("click",function(){
+    chaiSpecial++;
+    localStorage.setItem("chaispeciallocal",chaiSpecial);
+    document.getElementById("tchaisps").innerText = localStorage.chaispeciallocal;
+ 
+    var a = document.getElementById("tchaisps").innerText;
+    if ( a === "NaN" ){
+        document.getElementById("tchaisps").innerText ="Error";
+        alert("reset again and continue without realoding page");
+     }
+ 
+     totalRevenue= totalRevenue + 60;
+     localStorage.setItem("totalRev",totalRevenue);
+     document.getElementById("tre").innerText = localStorage.totalRev;
+ 
+ 
+ });
+ 
+ 
+ 
+ document.getElementById("tchaisps").innerText = localStorage.chaispeciallocal;
+ document.getElementById("tre").innerText = localStorage.totalRev;
+ 
+ if(localStorage.chaispeciallocal === undefined){
+ document.getElementById("tchaisps").innerText = 0;
+ }
+ // chai special end
+
+
+
+ // coffee small
+ document.getElementById("coffeesmall").addEventListener("click",function(){
+    coffeeSmall++;
+    localStorage.setItem("coffeesmalllocal",coffeeSmall);
+    document.getElementById("tcoffss").innerText = localStorage.coffeesmalllocal;
+    
+    
+    var a = document.getElementById("tcoffss").innerText;
+    if ( a === "NaN" ){
+        document.getElementById("tcoffss").innerText ="Error";
+        alert("reset again and continue without realoding page");
+     }
+ 
+     totalRevenue= totalRevenue + 50;
+     localStorage.setItem("totalRev",totalRevenue);
+     document.getElementById("tre").innerText = localStorage.totalRev;
+ 
+ 
+ });
+ 
+ 
+ 
+ document.getElementById("tcoffss").innerText = localStorage.coffeesmalllocal;
+ document.getElementById("tre").innerText = localStorage.totalRev;
+ 
+ if(localStorage.coffeesmalllocal === undefined){
+ document.getElementById("tcoffss").innerText = 0;
+ }
+ // coffee small end
+
+ // coffee large 
+ document.getElementById("coffeelarge").addEventListener("click",function(){
+    coffeeLarge++;
+    localStorage.setItem("coffeelargelocal",coffeeLarge);
+    document.getElementById("tcoffls").innerText = localStorage.coffeelargelocal;
+    
+    
+    var a = document.getElementById("tcoffls").innerText;
+    if ( a === "NaN" ){
+        document.getElementById("tcoffls").innerText ="Error";
+        alert("reset again and continue without realoding page");
+     }
+ 
+     totalRevenue= totalRevenue + 80;
+     localStorage.setItem("totalRev",totalRevenue);
+     document.getElementById("tre").innerText = localStorage.totalRev;
+ 
+ 
+ });
+ 
+ 
+ 
+ document.getElementById("tcoffls").innerText = localStorage.coffeelargelocal;
+ document.getElementById("tre").innerText = localStorage.totalRev;
+ 
+ if(localStorage.coffeelargelocal === undefined){
+ document.getElementById("tcoffls").innerText = 0;
+ }
+ // coffee large end
+
+ //coffee special
+
+ document.getElementById("coffeespecial").addEventListener("click",function(){
+    coffeeSpecial++;
+    localStorage.setItem("coffeespeciallocal",coffeeSpecial);
+    document.getElementById("tcoffsps").innerText = localStorage.coffeespeciallocal;
+    
+    
+    var a = document.getElementById("tcoffsps").innerText;
+    if ( a === "NaN" ){
+        document.getElementById("tcoffsps").innerText ="Error";
+        alert("reset again and continue without realoding page");
+     }
+ 
+     totalRevenue= totalRevenue + 100;
+     localStorage.setItem("totalRev",totalRevenue);
+     document.getElementById("tre").innerText = localStorage.totalRev;
+ 
+ 
+ });
+ 
+ 
+ 
+ document.getElementById("tcoffsps").innerText = localStorage.coffeespeciallocal;
+ document.getElementById("tre").innerText = localStorage.totalRev;
+ 
+ if(localStorage.coffeespeciallocal === undefined){
+ document.getElementById("tcoffsps").innerText = 0;
+ }
+
+
+
+
+
+
+
+
+
+
+
+
+ //reset
+
+ function reset(){
+    chaiSmall=0;
+    document.getElementById("tchaiss").innerText = 0;
+
+    chaiLarge=0;
+    document.getElementById("tchails").innerText = 0;
+
+    chaiSpecial=0;
+    document.getElementById("tchaisps").innerText = 0;
+
+    coffeeSmall=0;
+    document.getElementById("tcoffss").innerText = 0;
+    coffeeLarge=0;
+    document.getElementById("tcoffls").innerText = 0;
+    coffeeSpecial=0;
+    document.getElementById("tcoffsps").innerText = 0;
+
+
+
+
+
+
+
+
+    totalRevenue=0;
+    document.getElementById("tre").innerText = 0;
+     localStorage.clear();
+ }
+
+ 

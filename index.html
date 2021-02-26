@@ -4,99 +4,127 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>TeaShop</title>
+    <link rel="icon" href="coffeelogo.png" type="image/icon type">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1> Welcome to Admin panel</h1>
+    <h1> Tea Shop</h1>
+    <h1> Welcome to Admin panel </h1>
+       <div class="container-fluid">
+       <div class="row">
+
+           <div class="col-md-2 col-sm-6">
+               <h3>Chai Small</h3>
+              <div class="card" id="chaismall">
+
+              </div>
+               <h6> Price 40</h6>
+
+           </div>
+
+
+           <div class="col-md-2 col-sm-6">
+            <h3>Chai Large</h3>
+            <div class="card" id="chailarge">
+                  
+            </div>
+            <h6> Price 50</h6>
+           </div>
+
+
+           <div class="col-md-2 col-sm-6">
+            <h3>Chai Special</h3>
+            <div class="card" id="chaispecial">
+                  
+            </div>
+            <h6> Price 60</h6>
+           </div>
+
+
+           <div class="col-md-2 col-sm-6">
+            <h3>Coffee Small</h3>
+            <div class="card" id="coffeesmall">
+                  
+            </div>
+            <h6> Price 50</h6>
+           </div>
+
+
+           <div class="col-md-2 col-sm-6 ">
+            <h3>Coffee Large</h3>
+            <div class="card" id="coffeelarge">
+                  
+            </div>
+            <h6> Price 80</h6>
+           </div>
+
+
+           <div class="col-md-2 col-sm-6 ">
+            <h3>Coffee Special</h3>
+            <div class="card" id="coffeespecial">
+                  
+            </div>
+            <h6> Price 100</h6>
+           </div>
+
+
+       </div>
+    </div>
+
     <div class="container">
-    <div id="ChaiSmall" class="box card-1">
-       <h1>Chai Small</h1>
-       <p>Price 40</p>
+        <table class="table table-striped">
+            <tr>
+                <td>Total Chai Small Sold</td>
+                <td id="tchaiss"> 0</td>
+            </tr>
+
+            <tr>
+                <td>Total Chai Large Sold</td>
+                <td id="tchails"> 0</td>
+            </tr>
+
+            <tr>
+                <td>Total Chai Special Sold</td>
+                <td id="tchaisps"> 0</td>
+            </tr>
+
+            <tr>
+                <td> Total Coffee Small Sold</td>
+                <td id="tcoffss"> 0</td>
+            </tr>
+
+            <tr>
+                <td> Total Cofee Large Sold</td>
+                <td id="tcoffls"> 0</td>
+            </tr>
+
+            <tr>
+                <td> Total Cofee Speical Sold</td>
+                <td id="tcoffsps"> 0</td>
+            </tr>
+
+            <tr>
+                <td> Total Revenue Earned</td>
+                <td id="tre"> 0</td>
+            </tr>
+
+            <tr>
+                <td></td>
+                <td><a onclick="reset();" class="btn btn-danger">Reset</a></td>
+            </tr>
+        </table>
     </div>
-    <div id="ChaiLarge" class="box card-1" >
-        <h1>Chai Large</h1>
-        <p>Price 60</p>
-    </div>
-    <div id="ChaiSpecial" class="box card-1" >
-        <h1>Chai Special</h1>
-        <p>Price 80</p>
-    </div>
-    <div id="CoffeeSmall" class="box card-1" >
-        <h1>Coffee Small</h1>
-        <p>Price 50</p>
-    </div>
-    <div id="Coffeelarge" class="box card-1" >
-        <h1>Coffee Large</h1>
-        <p>Price 80</p>
-    </div>
-    <div id="CoffeeSpecial" class="box card-1">
-        <h1>Coffee Special</h1>
-        <p>Price 100</p>
-    </div>
-    </div>
-    
-    
-      
-      <table>
-         <tr>
-           <td> <p1>Total chai small sold:</p1></td>
-           <td id="tchaism"> </td>
-
-         </tr>
-
-         <tr>
-            <td> <p1>Total chai large sold:</p1></td>
-            <td id="tchailg"></td>
- 
-          </tr>
-
-          <tr>
-            <td> <p1>Total chai special sold:</p1></td>
-            <td id="tchaisp"></td>
- 
-          </tr>
-
-          <tr>
-            <td> <p1>Total Coffee Small sold:</p1></td>
-            <td id="tcoffs"> </td>
- 
-          </tr>
-
-          <tr>
-            <td> <p1>Total Coffee large sold:</p1></td>
-            <td id="tcofflg"></td>
- 
-          </tr>
-
-          <tr>
-            <td> <p1>Total Coffee Special sold :</p1></td>
-            <td id="tcoffsp"></td>
- 
-          </tr>
-
-          <tr>
-            <td><p1>Total Revenue Generated :</p1></td>
-            <td id="trgen"></td>
- 
-          </tr>
-          <tr>
-            <td><button onclick="reset();">   Reset   </button></td>
-            
- 
-          </tr>
+        
 
 
 
-      </table>
 
 
-    
-
-
-    <script src="app.js">
-    
-    </script>
-
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<script src="app.js"></script>
 </body>
 </html>
